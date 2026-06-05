@@ -64,6 +64,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <meta name="google-adsense-account" content="ca-pub-3510494087141765">
         <meta name="google-site-verification" content="P4rSwA07jR_8jUc1FCVi39ERCmf_XMSiHSdUoZ5o6aM" />
         {/* Google Fonts — preconnect for performance */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
