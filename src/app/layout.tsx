@@ -3,6 +3,7 @@ import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
+import { GlobalAdScripts } from "@/components/AdSlot";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -70,19 +71,12 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap"
           rel="stylesheet"
         />
-        {/* AdSense — loads once globally, prevented from duplicating by script async */}
-        {process.env.NEXT_PUBLIC_ADSENSE_PUB_ID && (
-          <script
-            async
-            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${process.env.NEXT_PUBLIC_ADSENSE_PUB_ID}`}
-            crossOrigin="anonymous"
-          />
-        )}
       </head>
       <body>
         <a href="#main-content" className="skip-nav">
           Skip to main content
         </a>
+        <GlobalAdScripts />
         <Header />
         <main id="main-content">
           <ErrorBoundary>{children}</ErrorBoundary>
